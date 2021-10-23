@@ -1,0 +1,23 @@
+.title-h2{
+    text-align: center;
+}
+
+.text_info{
+    margin-top: 50px;
+}
+
+.success_form,
+.error_form{
+    font-size: 24px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+.success_form{
+    color: #e9bb26;
+}
+
+.error_form{
+    color:red;
+}

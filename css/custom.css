@@ -21,3 +21,18 @@
 .error_form{
     color:red;
 }
+
+.slider{
+    overflow: hidden;
+}
+
+.slider-wrap{
+    display: flex;
+    
+    transition: transform 0.5s;
+}
+
+.slider-item{
+    margin: auto 0;
+    flex: 0 0 50%;
+}

@@ -19,7 +19,7 @@ const moveToSection = () =>{
     };
     hideArrow();
 
-    const scrollOne = (event)=> {
+    const scrollSection = (event)=> {
         event.preventDefault();
 
         let linkId = event.target.getAttribute('href');
@@ -36,10 +36,10 @@ const moveToSection = () =>{
     };  
 
     topMenu.addEventListener('click', (event)=> {
-        scrollOne(event);
+        scrollSection(event);
     });
 
-    arrowUp.addEventListener('click', scrollOne);
+    arrowUp.addEventListener('click', scrollSection);
 };
 
 export default moveToSection;

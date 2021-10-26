@@ -2,8 +2,17 @@
 
 const slider = ()=> {
     const topSlider = document.querySelector('.top-slider'),
-        slide = topSlider.querySelectorAll('.item');
+        slide = topSlider.querySelectorAll('.item'),
+        table = document.querySelectorAll('.table');
     
+    if(document.documentElement.clientWidth > 992){
+        table.forEach((item)=> {
+            item.style.visibility = 'visible';
+            item.style.opacity = '1'; 
+        });
+    }
+
+
     let currentSlide = 0,
     interval; 
 
@@ -34,6 +43,5 @@ const slider = ()=> {
     };
     startSlide();
 };
-
 
 export default slider;

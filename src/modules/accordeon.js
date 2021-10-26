@@ -1,22 +1,23 @@
 'use strict';
 
-const accordeon = ()=> {
+const accordeonPlay = ()=> {
     const accordeon = document.querySelector('.accordeon'),
         element = accordeon.querySelectorAll('.element'),
         elementContent = accordeon.querySelectorAll('.element-content');
-        
-    element.forEach((item) => {
-        item.addEventListener('click', (event) => {
-            item.classList.toggle('active');
-            item.querySelector('.element-content').style.display = 'block';
-
-            if(!item.classList.contains('active')){
-            item.querySelector('.element-content').style.display = 'none';
-        }
-        });
-        
-    });
     
+        accordeon.addEventListener('click', (event)=> {
+            const target = event.target;
+
+            elementContent.forEach((item)=> {
+                item.style.display = 'none';
+            });
+
+            element.forEach((item)=> {
+                item.classList.remove('active');
+            });
+            target.parentNode.classList.add('active');
+            target.parentNode.lastElementChild.style.display = 'block';
+        });
 };
 
-export default accordeon;
+export default accordeonPlay;

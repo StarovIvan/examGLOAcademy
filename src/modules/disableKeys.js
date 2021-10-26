@@ -14,8 +14,26 @@ const validator = ()=> {
             }
 
             if(event.target.placeholder === 'Телефон*'){
-                item.addEventListener('keydown', (event)=> {
 
+                const stopPasteNumber = (input)=> {
+                    item.addEventListener('keydown', (event)=> {
+                        if(!/[0-9\+]/i.test(event.key)){
+                            return event.preventDefault();
+                        }
+                        if(input){
+                            return event.preventDefault();
+                        }
+                    });
+                };
+
+                item.addEventListener('input', (event)=> {
+                    const targetLength = event.target.value.match(/[\d\+]/g).length;
+                    if(targetLength >= 20){
+                        stopPasteNumber(targetLength === 20);
+                    }
+                });
+
+                item.addEventListener('keydown', (event)=> {
                     if(!/[0-9\+]/i.test(event.key)){
                         return event.preventDefault();
                     }

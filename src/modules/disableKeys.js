@@ -27,7 +27,7 @@ const validator = ()=> {
                 };
 
                 item.addEventListener('input', (event)=> {
-                    const targetLength = event.target.value.match(/[\d\+]/g).length;
+                    let targetLength = event.target.value.match(/[\d\+]/g).length;
                     if(targetLength >= 20){
                         stopPasteNumber(targetLength === 20);
                     }
